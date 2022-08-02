@@ -90,5 +90,135 @@ h6 {
   position: relative;
   display: inline-block;
 }
-.btn_text {
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-left: 3px solid red;
+  border-top: 3px solid #18b5a4;
+  border-radius: 100%;
+  top: -10px;
+  left: 51%;
+  z-index: 1;
+  margin: 0px 0px 0px -40px;
+  transition: all 1s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -ms-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  box-shadow: 0px 0px 20px 3px #93858d;
+}
+
+.btn::before {
+  animation: rotate 10s infinite linear;
+}
+
+.btn::after {
+  animation: rotate 15s infinite linear;
+}
+
+.btn__text {
+  position: relative;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px;
+  border-radius: 50px;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
+  letter-spacing: 5px;
+  transition: all 1s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -ms-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  top: 0;
+  overflow: hidden;
+}
+
+.btn__text::before,
+.btn__text::after {
+  content: "";
+  position: absolute;
+  width: 51%;
+  height: 100%;
+  background-color: #eee;
+  transition: all 1s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -ms-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+}
+
+.btn__text::before {
+  left: 0;
+  z-index: 2;
+}
+
+.btn__text::after {
+  right: 0;
+}
+
+.btn__text span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  left: 100%;
+  opacity: 0;
+}
+
+.btn:hover .btn__text {
+  top: -10px;
+  color: #fff;
+  transition: all 0.5s ease 0.2s;
+  -webkit-transition: all 0.5s ease 0.2s;
+  -moz-transition: all 0.5s ease 0.2s;
+  -ms-transition: all 0.5s ease 0.2s;
+  -o-transition: all 0.5s ease 0.2s;
+  box-shadow: 0 5px 0px 0 #0c5b52;
+}
+
+.btn:hover .btn__text::before,
+.btn:hover .btn__text::after {
+  background-color: #18b5a4;
+}
+
+.btn:hover .btn__text::before {
+  width: 100%;
+}
+
+.btn:active .btn__text {
+  top: -7px;
+  color: #fff;
+  transition: all 0.1s ease 0s;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+  -ms-transition: all 0.1s ease 0s;
+  -o-transition: all 0.1s ease 0s;
+  box-shadow: 0 2px 0px 0 #0c5b52;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
 }
